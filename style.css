@@ -3,6 +3,7 @@
     padding:0;
     box-sizing:border-box;
     font-family: "Gilory";
+    color: #fff;
 }
     
 html, body{
@@ -21,5 +22,5 @@ html, body{
     height: 120px;
     width: 100%;
     /* background-color: red; */
-    border-bottom: 3px solid #fff;
+    border-bottom: 2px solid #fff;
 }
