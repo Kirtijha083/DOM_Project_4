@@ -23,4 +23,11 @@ html, body{
     width: 100%;
     /* background-color: red; */
     border-bottom: 2px solid #fff;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.elem h1{
+    font-size: 6vw;
 }
