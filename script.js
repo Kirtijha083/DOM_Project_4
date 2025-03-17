@@ -17,20 +17,51 @@
 //     elemImg.style.opacity = 0;
 // });
 
-// this is the final for all img...and all div...
+// this is the final for all img...and all div...but img overflow from div
+// let elem = document.querySelectorAll(".elem");
+
+// elem.forEach((value) => {
+//   value.addEventListener("mouseenter", () => {
+//     value.childNodes[3].style.opacity = 1;
+//   });
+
+//   value.addEventListener("mouseleave", () => {
+//     value.childNodes[3].style.opacity = 0;
+//   });
+
+//   value.addEventListener("mousemove", (dets) => {
+//     value.childNodes[3].style.left = dets.x + "px";
+//     value.childNodes[3].style.top = dets.y + "px";
+//   });
+// });
+
+
+
+// this is the final for all img...and all div...here everything work properly
 let elem = document.querySelectorAll(".elem");
 
 elem.forEach((value) => {
+  let img = value.querySelector("img");
+
   value.addEventListener("mouseenter", () => {
-    value.childNodes[3].style.opacity = 1;
+    img.style.opacity = 1;
   });
 
   value.addEventListener("mouseleave", () => {
-    value.childNodes[3].style.opacity = 0;
+    img.style.opacity = 0;
   });
 
   value.addEventListener("mousemove", (dets) => {
-    value.childNodes[3].style.left = dets.x + "px";
-    value.childNodes[3].style.top = dets.y + "px";
+    let rect = value.getBoundingClientRect(); // Parent element ka position
+    let x = dets.clientX - rect.left; // Element ke andar ka X position
+    let y = dets.clientY - rect.top;  // Element ke andar ka Y position
+
+    img.style.left = x + "px";
+    img.style.top = y + "px";
   });
 });
+
+
+// value.querySelector("img") se direct <img> ko target kiya.
+// getBoundingClientRect() se mouse position ko element ke relative calculate kiya, jo accurate result deta hai.
+// Aapka image ab har <div class="elem"> ke andar hi centered move karega.
