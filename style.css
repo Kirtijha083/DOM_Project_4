@@ -26,6 +26,7 @@ html, body{
     display: flex;
     align-items: center;
     justify-content: flex-start;
+    position: relative;
 }
 
 .elem h1{
@@ -33,9 +34,11 @@ html, body{
 }
 
 .elem img{
-    height: 200px;
-    width: 200px;
+    height: 150px;
+    width: 150px;
     object-fit: cover;
     object-position: center;
     border-radius: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
 }
