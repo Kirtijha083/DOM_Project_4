@@ -10,3 +10,7 @@ elem1.addEventListener("mousemove", (dets) => {
 elem1.addEventListener("mouseenter", (dets) => {
     elemImg.style.opacity = 1; 
 });
+
+elem1.addEventListener("mouseleave", (dets) => {
+    elemImg.style.opacity = 0; 
+});
